@@ -9,6 +9,10 @@ Since a [caffe converter](https://github.com/GPUOpen-ProfessionalCompute-Librari
 ## dependencies ##
 To get run this project you have to download and build [tensorflow](https://www.tensorflow.org/install/install_sources). This should be fixed by using [NNEF](https://www.khronos.org/nnef)
 
+## run ##
+In the main function you have to define the model path "*.pb" and the NHWC input size.
+After successful run this project extract weights and biases of the input Model simultaneously generate an GDF (Graph Descriptor File) and c++ ( with make file). Please follow the instructions [here](https://github.com/reger-men/amdovx-modules/blob/master/vx_nn/README.md) to execute the generated OpenVX Graph.
+
 ## License ##
 MIT License
 (c) reger-men 
