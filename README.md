@@ -7,7 +7,7 @@ This implementation is still not fully implemented. However much I tried to crea
 Since a [caffe converter](https://github.com/GPUOpen-ProfessionalCompute-Libraries/amdovx-modules/blob/master/utils/inference_generator/src/caffe2openvx.cpp) already exists, I tried to keep the structure similar for easy integration into [amdovx-modules](https://github.com/GPUOpen-ProfessionalCompute-Libraries/amdovx-modules/tree/master).
 
 ## dependencies ##
-To get run this project you have to download and build [tensorflow](https://www.tensorflow.org/install/install_sources). This should be fixed by using [NNEF](https://www.khronos.org/nnef)
+To get run this project you have to download and build [tensorflow](https://www.tensorflow.org/install/install_sources). This should be resolved in the future by using [NNEF](https://www.khronos.org/nnef)
 
 ## run ##
 In the main function you have to define the model path "*.pb" and the NCHW input size.
