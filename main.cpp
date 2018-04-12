@@ -49,10 +49,10 @@ int loadTFModelFile(const char* fileName, std::vector<std::vector<std::string>>&
 
 int main(int argc, char* argv[])
 {
-    const char *fileName = "frozen_inference_graph.pb"; //"output_graph.pb"; //"frozen_cityscapes.pb";
+    const char *fileName = "Models/MNIST/MNIST.pb";
 
     std::vector<std::vector<std::string>> net;
-    int inputDim[4] = { 1, 3, 299, 299 }; //[Batch Size, Channel, Height, Width]
+    int inputDim[4] = { 1, 1, 28, 28 }; //[Batch Size, Channel, Height, Width]
     std::string outputFolder = ".";
 
 
