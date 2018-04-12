@@ -9,6 +9,6 @@ Since a [caffe converter](https://github.com/GPUOpen-ProfessionalCompute-Librari
 ## dependencies ##
 To get run this project you have to download and build [tensorflow](https://www.tensorflow.org/install/install_sources). This should be fixed by using [NNEF](https://www.khronos.org/nnef)
 
-## dependencies ##
+## License ##
 MIT License
 (c) reger-men 
