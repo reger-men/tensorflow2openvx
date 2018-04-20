@@ -18,4 +18,4 @@ Please follow the instructions [here](https://github.com/reger-men/amdovx-module
 
 ## License ##
 MIT License
-(c) reger-men 
+(c) reger-men
