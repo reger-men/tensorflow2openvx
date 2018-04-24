@@ -1,4 +1,4 @@
-# Convert tensorflow pre-trained models to opnevx Graph
+# Convert tensorflow pre-trained models to OpenVX Graph
 This converter was created to convert my own (in Keras with tensorflow as backend trained) Model to Openvx Graph.
 The reason being that a direct comparison of the performance between openvx on AMD Hardware and TF_inference on Nvidia GPUs.
 
