@@ -3,7 +3,8 @@ install:
   - sudo apt-get install libqt4-dev qt4-qmake
 
 script:
-  - bazel build --genrule_strategy=standalone --spawn_strategy=standalone //tensorflow:libtensorflow.so
+  - sudo tar -xz https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-gpu-linux-x86_64-1.12.0.tar.gz
+  - sudo ldconfig
   - qmake -project
   - qmake tf2ovx.pro
   - make
