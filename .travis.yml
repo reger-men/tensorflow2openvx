@@ -4,6 +4,7 @@ install:
 
 script:
   - wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-gpu-linux-x86_64-1.12.0.tar.gz
+  - ls
   - sudo tar -xz libtensorflow-gpu-linux-x86_64-1.12.0.tar.gz -C tensorflow
   - sudo ldconfig
   - qmake -project
