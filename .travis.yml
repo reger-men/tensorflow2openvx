@@ -3,10 +3,12 @@ install:
   - sudo apt-get install libqt4-dev qt4-qmake
 
 script:
-  - wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-gpu-linux-x86_64-1.12.0.tar.gz
-  - ls
-  - tar -xzf libtensorflow-gpu-linux-x86_64-1.12.0.tar.gz -C tensorflow
-  - ldconfig
+  - mkdir build ; cd build
   - qmake -project
-  - qmake tf2ovx.pro
-  - make
+  - qmake ../tf2ovx.pro
+  - qmake ../tf2ovx.pro -spec linux-g++
+  - g++ -c -pipe -g -std=gnu++11 -Wall -W -fPIC -DQT_QML_DEBUG -I../ -I. -I../tensorflow -I../tensorflow/bazel-tensorflow/external/eigen_archive -I../tensorflow/bazel-tensorflow/external/protobuf/src -I../tensorflow/bazel-genfiles -I../../Qt/5.9/gcc_64/mkspecs/linux-g++ -o main.o ../main.cpp
+  - g++ -c -pipe -g -std=gnu++11 -Wall -W -fPIC -DQT_QML_DEBUG -I../ -I. -I../tensorflow -I../tensorflow/bazel-tensorflow/external/eigen_archive -I../tensorflow/bazel-tensorflow/external/protobuf/src -I../tensorflow/bazel-genfiles -I../../Qt/5.9/gcc_64/mkspecs/linux-g++ -o tfutil.o ../tfutil.cpp 
+  - g++ -c -pipe -g -std=gnu++11 -Wall -W -fPIC -DQT_QML_DEBUG -I../ -I. -I../tensorflow -I../tensorflow/bazel-tensorflow/external/eigen_archive -I../tensorflow/bazel-tensorflow/external/protobuf/src -I../tensorflow/bazel-genfiles -I../../Qt/5.9/gcc_64/mkspecs/linux-g++ -o utils.o ../utils.cpp 
+  - g++ -c -pipe -g -std=gnu++11 -Wall -W -fPIC -DQT_QML_DEBUG -I../ -I. -I../tensorflow -I../tensorflow/bazel-tensorflow/external/eigen_archive -I../tensorflow/bazel-tensorflow/external/protobuf/src -I../tensorflow/bazel-genfiles -I../../Qt/5.9/gcc_64/mkspecs/linux-g++ -o datainfo.o ../datainfo.cpp 
+  - g++  -o tf2ovx main.o datainfo.o tfutil.o utils.o   -L/home/adil/work/tensorflow2openvx/tensorflow/bazel-bin/tensorflow -ltensorflow_cc
